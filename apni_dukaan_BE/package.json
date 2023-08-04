@@ -1,0 +1,27 @@
+{
+  "name": "apni_dukaan",
+  "version": "1.0.0",
+  "description": "Crafting APNI DUKAAN, your very own shop",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [
+    "flutter",
+    "apnidukaan",
+    "nodejs",
+    "expressjs",
+    "ios",
+    "android"
+  ],
+  "author": "Saksham",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.3.4"
+  }
+}
