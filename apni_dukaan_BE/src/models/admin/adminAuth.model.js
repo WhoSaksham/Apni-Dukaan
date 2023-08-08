@@ -50,6 +50,6 @@ const adminAuthSchema = Schema({
 const AdminAuth = model('AdminAuth', adminAuthSchema);
 
 // Indexing
-AdminAuth.createIndexes();
+// AdminAuth.createIndexes();
 
 module.exports = AdminAuth;

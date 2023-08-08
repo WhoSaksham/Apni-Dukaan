@@ -56,6 +56,6 @@ const shopOwnerAuthSchema = Schema({
 const ShopOwnerAuth = model('ShopOwnerAuth', shopOwnerAuthSchema);
 
 // Indexing
-ShopOwnerAuth.createIndexes();
+// ShopOwnerAuth.createIndexes();
 
 module.exports = ShopOwnerAuth;

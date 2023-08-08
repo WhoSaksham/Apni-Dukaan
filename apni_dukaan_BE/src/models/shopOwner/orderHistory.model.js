@@ -4,21 +4,21 @@ const orderHistorySchema = Schema({
     category: {
         type: String,
         minLength: 3,
-        maxLength: 20,
+        maxLength: 30,
         trim: true,
         required: [true, "Provide Category"]
     },
     company: {
         type: String,
         minLength: 3,
-        maxLength: 20,
+        maxLength: 50,
         trim: true,
         required: [true, "Provide Company"]
     },
     name: {
         type: String,
         minLength: 3,
-        maxLength: 30,
+        maxLength: 100,
         trim: true,
         required: [true, "Provide Name"]
     },
@@ -52,6 +52,6 @@ const orderHistorySchema = Schema({
 const Order = model('Order', orderHistorySchema);
 
 // Indexing
-Order.createIndexes();
+// Order.createIndexes();
 
 module.exports = Order;

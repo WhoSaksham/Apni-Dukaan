@@ -4,28 +4,28 @@ const stationarySchema = Schema({
     category: {
         type: String,
         minLength: 3,
-        maxLength: 20,
+        maxLength: 50,
         trim: true,
         required: [true, "Provide Category"]
     },
     company: {
         type: String,
         minLength: 3,
-        maxLength: 20,
+        maxLength: 50,
         trim: true,
         required: [true, "Provide Company"]
     },
     name: {
         type: String,
         minLength: 3,
-        maxLength: 30,
+        maxLength: 100,
         trim: true,
         required: [true, "Provide Name"]
     },
     quantity: {
         type: Number,
-        min: 10,
-        max: 1000,
+        min: [1, "Min 1 Quantity"],
+        max: [1000, "Max 1000 Quantity only"],
         required: [true, "Provide Quantity"]
     },
     price: {
@@ -47,6 +47,6 @@ const stationarySchema = Schema({
 const Stationary = model('Stationary', stationarySchema);
 
 // Indexing
-Stationary.createIndexes();
+// Stationary.createIndexes();
 
 module.exports = Stationary;
