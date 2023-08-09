@@ -1,11 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const { verifyToken } = require('../../middlewares/middlewares'); // Middleware
-const { getHistoryController, addHistoryController, editHistoryController, deleteHistoryController } = require('../../controllers/shopOwner/orderHistory.controller'); // ShopOwner Controllers
+const { getHistoryController, getOwnerHistoryController, addHistoryController, editHistoryController, deleteHistoryController } = require('../../controllers/shopOwner/orderHistory.controller'); // ShopOwner Controllers
 
-// View ORDER HISTORY api for SHOPOWNER
+// View ALL ORDER HISTORY api for SHOPOWNER
 
 router.get('/', verifyToken, getHistoryController);
+
+// View ALL ORDER HISTORY for Particular SHOPOWNER api for SHOPOWNER
+
+router.get('/:purchasedBy', getOwnerHistoryController);
 
 // Add ORDER HISTORY api for SHOPOWNER
 

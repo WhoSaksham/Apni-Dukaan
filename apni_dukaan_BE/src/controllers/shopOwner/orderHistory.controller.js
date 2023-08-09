@@ -14,6 +14,26 @@ const getHistoryController = async (req, res) => {
     }
 };
 
+// View All History for Particular Owner api for SHOPOWNER
+const getOwnerHistoryController = async (req, res) => {
+    try {
+        const orders = await Order.find({ purchasedBy: req.params.purchasedBy });
+
+        // Check for Orders
+        if (orders.length <= 0) {
+            return res.status(404).json({ success: false, message: "No Orders found." });
+        }
+
+        res.status(200).json({ success: true, message: "All Order History fetch Success.", response: orders });
+
+    } catch (error) {
+        res.status(500).json({ success: false, message: "Something went wrong", error: error.message });
+        console.log("Error =>", error);
+    }
+};
+
+
+
 // Add Order History api for SHOPOWNER
 
 const addHistoryController = async (req, res) => {
@@ -84,6 +104,7 @@ const deleteHistoryController = async (req, res) => {
 
 module.exports = {
     getHistoryController,
+    getOwnerHistoryController,
     addHistoryController,
     editHistoryController,
     deleteHistoryController

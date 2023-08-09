@@ -24,7 +24,6 @@ app.use('/admin', require("./routes/admin/auth.routes")); // Admin Auth
 
 app.use('/admin', require("./routes/admin/stationary.routes")); // Admin Stationary
 
-
 // ShopOwner routes
 app.use('/shopowner', require("./routes/shopOwner/auth.routes")); // ShopOwner Auth
 
